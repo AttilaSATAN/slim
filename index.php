@@ -9,8 +9,8 @@
 	
 		$db = new DbHandler();
 		$iller = $db->iller();
-
-		echo json_encode($iller);
+		$app->render(200,$iller);
+		
 	});
 	$app->run();
 ?>
