@@ -1,0 +1,11 @@
+<?php
+	require 'vendor/autoload.php';
+
+	$app = new \Slim\Slim();
+	$app->get('/foo/:bar', function ($bar) {
+
+	    		require_once dirname(__FILE__) . './dbhandler.php';
+		$db = new DbHandler();
+		echo $db->iller();
+	});
+	$app->run();

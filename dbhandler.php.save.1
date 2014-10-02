@@ -1,0 +1,19 @@
+<?php
+class DbHandler {
+ 
+    private $conn;
+ 
+    function __construct() {
+        require dirname(__FILE__) . '/dbconnect.php';
+    // opening db connection
+        $db = new DbConnect();
+        $this->conn = $db->connect();
+    }
+    public function iller() {
+       	$stmt = $this->conn->prepare("SELECT * from il");
+        $stmt->execute();
+	$result = $this->query ($s_Istem)->fetchAll (PDO::FETCH_O
+        	return 'asdsad';
+    	}
+}
+?>

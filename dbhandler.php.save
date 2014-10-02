@@ -1,0 +1,20 @@
+class DbHandler {
+ 
+    private $conn;
+ 
+    function __construct() {
+        require_once dirname(__FILE__) . './DbConnect.php';
+        // opening db connection
+        $db = new DbConnect();
+        $this->conn = $db->connect();
+    }
+	$stmt = $this->conn->prepare("SELECT name, email, api_key, status, created_at FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        if ($stmt->execute()) {
+            $user = $stmt->get_result()->fetch_assoc();
+            $stmt->close();
+            return $user;
+        } else {
+            return NULL;
+        }
+}
