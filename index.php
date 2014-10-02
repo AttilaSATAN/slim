@@ -9,7 +9,7 @@
 	
 		$db = new DbHandler();
 		$iller = $db->iller();
-		$app->render(200,$iller);
+		$app->render(200,$iller[0]);
 		
 	});
 	$app->run();
