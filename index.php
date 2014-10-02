@@ -10,7 +10,7 @@
 		$db = new DbHandler();
 		$iller = $db->iller();
 		var_dump($iller);
-		$app->render(200,$iller);
+		$app->render(200, (Object) $iller);
 		
 	});
 	$app->run();
