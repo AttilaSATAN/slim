@@ -5,7 +5,7 @@
 	$app = new \Slim\Slim();
 	$app->view(new \JsonApiView());
 	$app->add(new \JsonApiMiddleware());
-	$app->get('/foo/:bar', function ($bar) {
+	$app->get('/foo/:bar', function ($bar) use ($app){
 	
 		$db = new DbHandler();
 		$iller = $db->iller();
